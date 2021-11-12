@@ -22,7 +22,7 @@ export const Navbar = () => {
           <NavLink
             className="active"
             className="nav-item nav-link"
-            exact
+            exact="true"
             to="/dc"
           >
             DC
@@ -32,7 +32,7 @@ export const Navbar = () => {
 
       <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul className="navbar-nav ml-auto">
-          <NavLink to="/login" className="nav-item nav-link">
+          <NavLink exact="true" to="/login" className="nav-item nav-link">
             Logout
           </NavLink>
         </ul>

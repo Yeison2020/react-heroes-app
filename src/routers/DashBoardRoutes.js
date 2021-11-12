@@ -1,25 +1,25 @@
 import React from "react";
 import { Navbar } from "../components/ui/Navbar";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MarvelScreen from "../components/marvel/MarvelScreen";
 import HeroScreen from "../components/heroes/HeroScreen";
 import DcScreen from "../components/dc/DcScreen";
+import LoginScreen from "../components/login/LoginScreen";
 const DashBoardRoutes = () => {
   return (
     <React.Fragment>
-      <Navbar />
       <Router>
+        <Navbar />
         <div>
           <Routes>
-            <Route exact path="marvel" element={<MarvelScreen />} />
-            <Route exact path="heroe/:heroeId" element={<HeroScreen />} />
-            <Route exact path="/dc" element={<DcScreen />} />
-            <Route element={<Navigate to="/" />} />
+            <Route exact="true" path="marvel" element={<MarvelScreen />} />
+            <Route
+              exact="true"
+              path="heroe/:heroeId"
+              element={<HeroScreen />}
+            />
+            <Route exact="true" path="/dc" element={<DcScreen />} />
+            <Route exact="true" path="login" element={<LoginScreen />} />
           </Routes>
         </div>
       </Router>

@@ -1,10 +1,10 @@
 import React from "react";
-import AppRouter from "../routers/AppRouter";
+import DashBoardRoutes from "../routers/DashBoardRoutes";
 
 const HeroesApp = () => {
   return (
     <div>
-      <AppRouter />
+      <DashBoardRoutes />
     </div>
   );
 };
