@@ -1,29 +1,37 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-      <Link className="navbar-brand" to="/">
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          "navbar-brand" + (isActive ? " active" : "")
+        }
+      >
         Asociaciones
-      </Link>
+      </NavLink>
 
       <div className="navbar-collapse">
         <div className="navbar-nav">
           <NavLink
-            className="active"
-            className="nav-item nav-link"
-            exact="true"
             to="/marvel"
+            end={true}
+            className={({ isActive }) =>
+              "nav-item nav-link" + (isActive ? " active" : "")
+            }
           >
             Marvel
           </NavLink>
 
           <NavLink
-            className="active"
-            className="nav-item nav-link"
+            className={({ isActive }) =>
+              "nav-item nav-link" + (isActive ? " active" : "")
+            }
             exact="true"
             to="/dc"
+            end={true}
           >
             DC
           </NavLink>
@@ -32,7 +40,13 @@ export const Navbar = () => {
 
       <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul className="navbar-nav ml-auto">
-          <NavLink exact="true" to="/login" className="nav-item nav-link">
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              "nav-item nav-link" + (isActive ? " active" : "")
+            }
+            end={true}
+          >
             Logout
           </NavLink>
         </ul>
