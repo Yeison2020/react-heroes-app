@@ -14,17 +14,22 @@ export const Navbar = () => {
       <div className="navbar-collapse">
         <div className="navbar-nav">
           <NavLink
-            activeClassName="active"
-            className="nav-item nav-link"
-            exact
+            exact="true"
             to="/marvel"
+            end={true}
+            className={({ isActive }) =>
+              "nav-item nav-link" + (isActive ? " active" : "")
+            }
           >
             Marvel
           </NavLink>
-
+          ;
           <NavLink
-            className={({ isActive }) => "nav-item nav-link"}
-            exact
+            className={({ isActive }) =>
+              "nav-item nav-link" + (isActive ? " active" : "")
+            }
+            end={true}
+            exact="true"
             to="/dc"
           >
             DC
