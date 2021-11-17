@@ -1,12 +1,8 @@
 import React from "react";
-import DashBoardRoutes from "../routers/DashBoardRoutes";
+import AppRouter from "../routers/AppRouter";
 
 const HeroesApp = () => {
-  return (
-    <div>
-      <DashBoardRoutes />
-    </div>
-  );
+  return <AppRouter />;
 };
 
 export default HeroesApp;
