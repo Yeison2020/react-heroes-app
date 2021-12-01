@@ -9,16 +9,18 @@ import { Navbar } from "../components/ui/Navbar";
 
 const AppRouter = () => {
   return (
-    <Router>
+    <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<MarvelScreen />} />
-        <Route path="/search" element={<SearchScreen />} />
-        <Route path="/marvel" element={<MarvelScreen />} />
-        <Route path="/dc" element={<DcScreen />} />
-        <Route path="/login" element={<LoginScreen />} />
-      </Routes>
-    </Router>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<MarvelScreen />} />
+          <Route path="/search" element={<SearchScreen />} />
+          <Route path="/marvel" element={<MarvelScreen />} />
+          <Route path="/dc" element={<DcScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
+        </Routes>
+      </div>
+    </>
   );
 };
 

@@ -3,6 +3,9 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
   const navigate = useNavigate();
+
+  // This give more control over the navigation
+
   const handleLogOut = () => {
     navigate("/login", {
       replace: true,
