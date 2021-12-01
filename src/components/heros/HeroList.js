@@ -1,18 +1,22 @@
 import React from "react";
 import getHeroesByPublisher from "../../selectors/getHeroesByPublisher";
+import HeroCard from "./HeroCard";
 
 const HeroList = ({ publisher }) => {
   const heroes = getHeroesByPublisher(publisher);
 
+  // Important note is how I'm passing the values using destruring with ppoprs
+
   return (
-    <>
-      <h1>Hero list {publisher}</h1>
+    <div className="card-deck">
+      <h1>{publisher}</h1>
       <ul>
         {heroes.map((data) => {
-          return <li key={data.id}>{data.superhero}</li>;
+          console.log(data);
+          return <HeroCard key={data.id} {...data}></HeroCard>;
         })}
       </ul>
-    </>
+    </div>
   );
 };
 
