@@ -14,7 +14,7 @@ const AppRouter = () => {
       <div className="container">
         <Routes>
           <Route path="/" element={<MarvelScreen />} />
-          <Route path="/hero/:id" element={<HeroScreen />} />
+          <Route path="/hero/:slug" element={<HeroScreen />} />
           <Route path="/search" element={<SearchScreen />} />
           <Route path="/marvel" element={<MarvelScreen />} />
           <Route path="/dc" element={<DcScreen />} />
