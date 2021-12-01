@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import DcScreen from "../components/dc/DcScreen";
 import LoginScreen from "../components/login/LoginScreen";
 import MarvelScreen from "../components/marvel/MarvelScreen";
-import { BrowserRouter as Router } from "react-router-dom";
 import SearchScreen from "../components/search/SearchScreen";
 import { Navbar } from "../components/ui/Navbar";
 import HeroScreen from "../components/heros/HeroScreen";
