@@ -1,7 +1,19 @@
 import React from "react";
+
+// This labrary will help me to use the values from my useLocation Hook
+// Adn query those value
+import queryString from "query-string";
+import getHeroesByName from "./getHeroesByName";
 import { useForm } from "./useForm";
+import HeroCard from "../heros/HeroCard";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const SearchScreen = () => {
+  // Those terms or Hooks are really import Please be aware of them
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location.search);
+  const query = queryString.parse(location.search);
   const [values, handleInputChange] = useForm({
     searchText: "",
   });
@@ -12,35 +24,43 @@ const SearchScreen = () => {
 
   const { searchText } = values;
 
+  const heroesFiltered = getHeroesByName("Super man");
+
   const handleform = (e) => {
     e.preventDefault();
+    navigate(`?q=${searchText}`);
   };
   return (
     <>
-      <h1>Search</h1>
+      <h1>Searchs</h1>
       <hr />
-      <div className="row">
-        <div className="col-5">
-          <h4>Search</h4>
-          <hr />
-          <form>
-            <input
-              type="text"
-              name="searchText"
-              placeholder="Search"
-              className="form-control"
-              autoComplete="off"
-              value={searchText}
-              onChange={handleInputChange}
-            ></input>
-            <button
-              type="submit"
-              className="btn btn-outline-primary mt-1 btn-block"
-              onClick={handleform}
-            >
-              Search
-            </button>
-          </form>
+      <form>
+        Search
+        <input
+          type="text"
+          name="searchText"
+          placeholder="Search"
+          className="form-control mt-2"
+          autoComplete="off"
+          value={searchText}
+          onChange={handleInputChange}
+        ></input>
+        <button
+          type="submit"
+          className="btn btn-outline-primary mt-3 btn-block"
+          onClick={handleform}
+        >
+          Search
+        </button>
+      </form>
+      <hr />
+      <div className="colums">
+        <h4>Results</h4>
+        <div className="col-5"></div>
+        <div className="col-7">
+          {heroesFiltered.map((data) => {
+            return <HeroCard key={data.id} {...data} />;
+          })}
         </div>
       </div>
     </>
