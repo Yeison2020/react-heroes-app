@@ -27,6 +27,8 @@ const HeroCard = ({
               <p className="card-text">
                 <small>{first_appearance}</small>
               </p>
+              <h5>Publisher</h5>
+              <p>{publisher}</p>
               <Link to={`/hero/${id}`} className="btn btn-primary">
                 More ...
               </Link>
