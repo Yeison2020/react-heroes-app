@@ -1,0 +1,4 @@
+.all_card {
+  display: grid;
+  justify-content: space-around;
+}
