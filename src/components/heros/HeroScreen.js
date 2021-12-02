@@ -16,8 +16,9 @@ const HeroScreen = () => {
   // This is similiar to use Navigate
   // Check if the condition is not met I will send you bak to another path or end point
   console.log(hero);
-  // This one auto navigate while useNavigate have to be trigger by the user mostly using a function
-  if (!hero) {
+  // This one auto navigate while useNavigate have to be trigger by the user mostly using a function and navigate hook can be cntrolle with conditions
+
+  if (hero !== "string") {
     <Navigate to="/" />;
   }
 
