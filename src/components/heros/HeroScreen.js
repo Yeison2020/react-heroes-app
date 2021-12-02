@@ -3,9 +3,14 @@ import getHeroById from "../../selectors/getHeroById";
 import { useParams, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router";
 const HeroScreen = () => {
+  const navigate = useNavigate();
+  let { slug } = useParams();
   // This hook give me the id that It's been pass in the url and I can destrure it to see and Use the id at my disposal
   // Another problem is the { slug } has to match the name hero/:slug
-  let { slug } = useParams();
+  const handleReturn = () => {
+    navigate(-1);
+  };
+
   console.log(slug);
 
   // Using the id with my function
@@ -18,18 +23,13 @@ const HeroScreen = () => {
   console.log(hero);
   // This one auto navigate while useNavigate have to be trigger by the user mostly using a function and navigate hook can be cntrolle with conditions
 
-  if (hero !== "string") {
+  if (!hero) {
     <Navigate to="/" />;
   }
-
-  const navigate = useNavigate();
 
   const image_path = `/assets/heroes/${slug}.jpg`;
   console.log(image_path);
   // Here the -1 one value return the useNavigate to the page It was before
-  const handleReturn = () => {
-    navigate(-1, { replace: true });
-  };
 
   // mt marging top
   return (
